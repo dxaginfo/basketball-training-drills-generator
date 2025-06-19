@@ -1,0 +1,136 @@
+/* Custom styles for Basketball Training Drills Generator */
+
+/* Custom font import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+/* Basketball-themed styling */
+.basketball-bg {
+    background-color: #f8741b;
+}
+
+.form-checkbox:checked, .form-radio:checked {
+    background-color: #f8741b !important;
+    border-color: #f8741b !important;
+}
+
+/* Animation for drill cards */
+.drill-card {
+    transition: all 0.3s ease;
+}
+
+.drill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Basketball pattern for headers */
+header {
+    background-color: #f8741b;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 20c10 0 10-10 20-10s10 10 20 10-10 10-20 10S10 20 0 20z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Custom styling for drill difficulty indicators */
+.difficulty-indicator {
+    display: inline-flex;
+    align-items: center;
+}
+
+.difficulty-dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 2px;
+}
+
+.difficulty-dot.active {
+    background-color: #f8741b;
+}
+
+/* Animation for the generate button */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(248, 116, 27, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(248, 116, 27, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(248, 116, 27, 0);
+    }
+}
+
+button[type="submit"] {
+    animation: pulse 2s infinite;
+}
+
+/* Custom styling for drills sections */
+.drill-section {
+    border-left: 4px solid #f8741b;
+    padding-left: 1rem;
+}
+
+.drill-section h3 {
+    color: #f8741b;
+}
+
+/* Media queries for better mobile experience */
+@media (max-width: 640px) {
+    header h1 {
+        font-size: 1.75rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    .drill-card {
+        padding: 1rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    header, footer, button {
+        display: none !important;
+    }
+    
+    body {
+        background-color: white;
+    }
+    
+    .max-w-4xl {
+        max-width: none;
+    }
+    
+    .rounded-xl, .shadow-md {
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+    
+    .drill-card {
+        page-break-inside: avoid;
+        border: 1px solid #eee;
+    }
+}
+
+/* Loading animation */
+.loading-spinner {
+    border: 4px solid rgba(248, 116, 27, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #f8741b;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
