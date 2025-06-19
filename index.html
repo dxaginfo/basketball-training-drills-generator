@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Training Drills Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-orange-500 text-white shadow-lg">
+        <div class="container mx-auto py-6 px-4">
+            <h1 class="text-4xl font-bold text-center">Basketball Training Drills Generator</h1>
+            <p class="text-center mt-2 text-xl">Personalize your training based on position, skill level, and goals</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="p-8">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">Create Your Training Plan</h2>
+                
+                <form id="drills-form" class="space-y-6">
+                    <!-- Position Selection -->
+                    <div>
+                        <label for="position" class="block text-gray-700 font-medium mb-2">Primary Position</label>
+                        <select id="position" name="position" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            <option value="" selected disabled>Select your position</option>
+                            <option value="pg">Point Guard (PG)</option>
+                            <option value="sg">Shooting Guard (SG)</option>
+                            <option value="sf">Small Forward (SF)</option>
+                            <option value="pf">Power Forward (PF)</option>
+                            <option value="c">Center (C)</option>
+                        </select>
+                    </div>
+
+                    <!-- Skill Level -->
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Skill Level</label>
+                        <div class="flex flex-wrap gap-4">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="skill-level" value="beginner" class="form-radio text-orange-500">
+                                <span class="ml-2">Beginner</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="skill-level" value="intermediate" class="form-radio text-orange-500">
+                                <span class="ml-2">Intermediate</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="skill-level" value="advanced" class="form-radio text-orange-500">
+                                <span class="ml-2">Advanced</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Training Focus -->
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Training Focus (Select up to 3)</label>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="focus" value="shooting" class="form-checkbox text-orange-500">
+                                <span class="ml-2">Shooting</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="focus" value="ball-handling" class="form-checkbox text-orange-500">
+                                <span class="ml-2">Ball Handling</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="focus" value="passing" class="form-checkbox text-orange-500">
+                                <span class="ml-2">Passing</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="focus" value="defense" class="form-checkbox text-orange-500">
+                                <span class="ml-2">Defense</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="focus" value="footwork" class="form-checkbox text-orange-500">
+                                <span class="ml-2">Footwork</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="focus" value="conditioning" class="form-checkbox text-orange-500">
+                                <span class="ml-2">Conditioning</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="focus" value="rebounding" class="form-checkbox text-orange-500">
+                                <span class="ml-2">Rebounding</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="focus" value="post-moves" class="form-checkbox text-orange-500">
+                                <span class="ml-2">Post Moves</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Training Time -->
+                    <div>
+                        <label for="training-time" class="block text-gray-700 font-medium mb-2">Training Time Available</label>
+                        <select id="training-time" name="training-time" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            <option value="30">30 minutes</option>
+                            <option value="45">45 minutes</option>
+                            <option value="60" selected>60 minutes</option>
+                            <option value="90">90 minutes</option>
+                            <option value="120">2 hours</option>
+                        </select>
+                    </div>
+
+                    <!-- Equipment Available -->
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Equipment Available</label>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="equipment" value="ball" class="form-checkbox text-orange-500" checked>
+                                <span class="ml-2">Basketball</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="equipment" value="hoop" class="form-checkbox text-orange-500" checked>
+                                <span class="ml-2">Basketball Hoop</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="equipment" value="cones" class="form-checkbox text-orange-500">
+                                <span class="ml-2">Cones</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="equipment" value="agility-ladder" class="form-checkbox text-orange-500">
+                                <span class="ml-2">Agility Ladder</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="equipment" value="resistance-bands" class="form-checkbox text-orange-500">
+                                <span class="ml-2">Resistance Bands</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="equipment" value="partner" class="form-checkbox text-orange-500">
+                                <span class="ml-2">Training Partner</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:-translate-y-1">
+                            Generate Training Plan
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Results Container (Hidden by Default) -->
+        <div id="results-container" class="max-w-4xl mx-auto mt-8 bg-white rounded-xl shadow-md overflow-hidden hidden">
+            <div class="p-8">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">Your Personalized Training Plan</h2>
+                <div id="plan-summary" class="mb-6 p-4 bg-gray-50 rounded-lg">
+                    <!-- Dynamic Summary Content -->
+                </div>
+                
+                <div id="drills-container" class="space-y-6">
+                    <!-- Dynamic Drills Content -->
+                </div>
+                
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <button id="print-plan" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                        Print Plan
+                    </button>
+                    <button id="save-plan" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                        Save as PDF
+                    </button>
+                    <button id="new-plan" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                        Create New Plan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2025 Basketball Training Drills Generator</p>
+                </div>
+                <div>
+                    <p>Created by AI Basketball Experts</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
